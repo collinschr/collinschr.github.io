@@ -1,3 +1,5 @@
+const el = document.querySelector('.clickable');
+
 function handleSound() {
   // Add your code here to play a sound
   // For example, using the Web Audio API or an audio library
