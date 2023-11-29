@@ -17,7 +17,7 @@
             el.addEventListener('click', function () {
 
                 var ding = new Audio("ding.mp3");
-
+                ding.play();
                 console.log(el.getAttribute('visible')); 
 
                 if(el.getAttribute('visible') === 'true'){
