@@ -32,16 +32,28 @@
                 <a-entity id = "camera" camera="userHeight: 1.6"></a-entity>
             </a-scene>
             <script>
-                document.querySelector('#scene').addEventListener('loaded', function () {
-                    // Get the box element
-                    var box = document.querySelector('#plane');
-        
-                    // Add a click event listener to the box
-                    box.addEventListener('click', function () {
-                        // Change the color of the box when clicked
-                        box.setAttribute('material', 'color', 'blue');
-                    });
-                });
+               // Get the box element
+                var box = document.querySelector('#plane');
+
+                // Define an array of colors
+                var colors = ['red', 'blue', 'green', 'yellow']; // Add more colors as needed
+
+                var currentIndex = 0; // Initialize the index of the current color
+
+                // Function to change the color of the box
+                function changeColor() {
+                    // Set the material color of the box to the current color
+                    box.setAttribute('material', 'color', colors[currentIndex]);
+
+                    // Increment the index for the next color
+                    currentIndex = (currentIndex + 1) % colors.length;
+                }
+
+                // Add a click event listener to the box
+                box.addEventListener('click', changeColor);
+
+                // Add a touchstart event listener to the box (for mobile devices)
+                box.addEventListener('touchstart', changeColor);
         </script>
         </body>
 </html>
