@@ -8,9 +8,11 @@
         <script src="https://rawgit.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-click-events/events.js"></script>
     </head>
         <body style="margin: 0px; overflow: hidden;">
-            <a-scene embedded arjs>
-                <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" preset="hiro" id = "hiro-marker">
-                    <a-plane position="0 0 0" rotation="-90 0 90" width="2" material ="color: red;" id="plane">
+            <a-scene embedded arjs renderer="'logarithmicDepthBuffer: true;" vr-mode-ui="enable: false" gesture-detector id="scene">
+                <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" preset="hiro" id = "hiro-marker" raycaster="objects: .clickable"
+                emitevents="true">
+                    <a-plane position="0 0 0" rotation="-90 0 90" width="2" material ="color: red;" id="plane" class="clickable" 
+                    gesture-handler="minScale: 0.25; maxScale: 10">
                         <audio id="ding" src="ding.mp3" autoplay="false"></audio>
                     </a-plane>
                 </a-marker>
