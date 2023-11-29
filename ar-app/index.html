@@ -31,5 +31,17 @@
 
                 <a-entity id = "camera" camera="userHeight: 1.6"></a-entity>
             </a-scene>
+            <script>
+                document.querySelector('#scene').addEventListener('loaded', function () {
+                    // Get the box element
+                    var box = document.querySelector('#plane');
+        
+                    // Add a click event listener to the box
+                    box.addEventListener('click', function () {
+                        // Change the color of the box when clicked
+                        box.setAttribute('material', 'color', 'blue');
+                    });
+                });
+        </script>
         </body>
 </html>
