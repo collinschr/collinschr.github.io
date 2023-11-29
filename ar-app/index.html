@@ -32,10 +32,9 @@
                 <a-entity id = "camera" camera="userHeight: 1.6"></a-entity>
             </a-scene>
             <script>
-                if(markerFound){
-               // Get the box element
                 var box = document.querySelector('#plane');
-
+                if(box.isVisible){
+               // Get the box element
                 // Define an array of colors
                 var colors = ['red', 'blue', 'green', 'yellow']; // Add more colors as needed
 

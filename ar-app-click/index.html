@@ -1,0 +1,57 @@
+<!doctype HTML>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+        <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+
+        <script src="components.js"></script>
+        <script src="/cursor.js" defer></script>
+
+            
+        <script>
+            AFRAME.registerComponent('play-sound', {
+            init: function () {
+                var el = this.el
+            
+            el.addEventListener('click', function () {
+
+                var ding = new Audio("ding.mp3");
+
+                console.log(el.getAttribute('visible')); 
+
+                if(el.getAttribute('visible') === 'true'){
+                  console.log("wowzers")
+                }
+            })
+        }
+    });
+          </script>
+    </head>
+        <body style="margin: 0px; overflow: hidden;">
+            <a-scene embedded arjs id="scene">
+                <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" raycaster="objects: a-box" preset="hiro" id = "hiro-marker">
+                    <a-box position="0 0.5 0" visible="false" color-randomizer play-sound id="box"></a-box>
+                </a-marker>
+                <a-entity camera ></a-entity>
+            </a-scene>
+            <script>
+                document.querySelector('a-marker').addEventListener('markerFound', function () {
+                    var box = document.querySelector('#box');
+                
+                    // Set the box to be visible when marker is found
+                    box.setAttribute('visible', 'true');
+                    console.log(box.getAttribute('visible'))
+                });
+            </script>
+            <script>
+                document.querySelector('a-marker').addEventListener('markerLost', function () {
+                    var box = document.querySelector('#box');
+                
+                    // Set the box to be visible when marker is found
+                    box.setAttribute('visible', 'false');
+                    console.log(box.getAttribute('visible'))
+                });
+            </script>
+        </body>
+</html>
