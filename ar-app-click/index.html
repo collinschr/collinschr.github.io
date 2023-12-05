@@ -15,14 +15,10 @@
                 var el = this.el
             
             el.addEventListener('click', function () {
-
-                var ding = new Audio("seeram.mp3");
-                ding.play();
+                console.log("clicked")
+                var sound = new Audio("ding.mp3");
+                sound.play();
                 console.log(el.getAttribute('visible')); 
-
-                if(el.getAttribute('visible') === 'true'){
-                  console.log("wowzers")
-                }
             })
         }
     });
