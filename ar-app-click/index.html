@@ -28,6 +28,7 @@
             <a-scene embedded arjs id="scene">
                 <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" raycaster="objects: a-box" preset="hiro" id = "hiro-marker">
                     <a-image id="box" geometry="primitive: plane" src="flyer.png" rotation="-90 0 0" play-sound width="2" height="1.5" position='0 0 0'></a-image>
+                    <a-plane id = "plane" rotation="-90 0 0" height="1.5" position='0 -2 0'></a-plane>
                 </a-marker>
                 <a-entity camera ></a-entity>
             </a-scene>
