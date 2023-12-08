@@ -20,7 +20,7 @@
                         console.log("I am clicked");
                         el.setAttribute("sound_playing", "false");
                     }
-                    if(el.getAttribute("sound_playing") == 'false'){
+                    else{
                         sound.play();
                         el.setAttribute("sound_playing", "true");
                     }
