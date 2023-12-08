@@ -15,8 +15,10 @@
                 var el = this.el;
 
                 el.addEventListener('click', (e) => {
-                    sound.pause();
-                    console.log("I am clicked");
+                    if(el.getAttribute("sound_playing" == 'true')){
+                        sound.pause();
+                        console.log("I am clicked");
+                    }
                 });
                 }
             });
