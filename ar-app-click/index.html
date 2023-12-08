@@ -9,6 +9,18 @@
         
     
         <script> var sound = new Audio("seeram.mp3"); </script>
+        <script>
+            AFRAME.registerComponent('soundclick', {
+                init: function () {
+                var el = this.el;
+
+                el.addEventListener('click', (e) => {
+                    sound.pause();
+                    console.log("I am clicked");
+                });
+                }
+            });
+        </script>
 
     </head>
         <body style="margin: 0px; overflow: hidden;">
@@ -24,9 +36,12 @@
                 
                     // Set the box to be visible when marker is found
                     box.setAttribute('visible', 'true');
-                    sound.play();
-                    box.setAttribute('sound_playing', 'true');
-                    console.log(box.getAttribute('visible'));
+                    if(box.getAttribute('sound_playing') == 'false'){
+                        sound.play();
+                        box.setAttribute('sound_playing', 'true');
+                        console.log(box.getAttribute('visible'));
+                    }
+
                 });
             </script>
             <script>
@@ -36,18 +51,6 @@
                     // Set the box to be visible when marker is found
                     box.setAttribute('visible', 'false');
                     console.log(box.getAttribute('visible'));
-                });
-            </script>
-            <script>
-                AFRAME.registerComponent('soundclick', {
-                    init: function () {
-                    var el = this.el;
-
-                    el.addEventListener('click', (e) => {
-                        sound.pause();
-                        console.log("I am clicked");
-                    });
-                    }
                 });
             </script>
         </body>
