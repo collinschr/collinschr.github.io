@@ -7,10 +7,10 @@
 
         <script src="components.js"></script>
         <script src="/cursor.js" defer></script>
+        
+    
+        <script> var sound = new Audio("ding.mp3"); </script>
 
-            
-        <script>
-          </script>
     </head>
         <body style="margin: 0px; overflow: hidden;">
             <a-scene embedded arjs id="scene">
@@ -25,6 +25,7 @@
                 
                     // Set the box to be visible when marker is found
                     box.setAttribute('visible', 'true');
+                    sound.play();
                     console.log(box.getAttribute('visible'))
                 });
             </script>
@@ -36,20 +37,6 @@
                     box.setAttribute('visible', 'false');
                     console.log(box.getAttribute('visible'))
                 });
-            </script>
-            <script>
-            AFRAME.registerComponent('play-sound', {
-                init: function () {
-                var el = this.el
-
-                var sound = new Audio("ding.mp3");
-                if(el.getAttribute('visible')){
-                    //sound.play();
-                    console.log("Sound played");
-
-                }
-            }
-        });
             </script>
         </body>
 </html>
