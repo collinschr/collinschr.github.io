@@ -44,10 +44,8 @@
                     var el = this.el;
 
                     el.addEventListener('click', (e) => {
-                        if(el.getAttribute('sound_playing') == 'true'){
-                            sound.pause();
-                            console.log("I am clicked");
-                        }
+                        sound.pause();
+                        console.log("I am clicked");
                     });
                     }
                 });
