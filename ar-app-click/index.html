@@ -15,7 +15,7 @@
                 var el = this.el
 
                 var sound = new Audio("ding.mp3");
-                if(el.getAttribute('visible') == 'true'){
+                if(el.getAttribute('visible')){
                     sound.play();
                     console.log("Sound played");
 
