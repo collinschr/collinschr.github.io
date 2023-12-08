@@ -13,13 +13,16 @@
             AFRAME.registerComponent('play-sound', {
             init: function () {
                 var el = this.el
-            
-            el.addEventListener('click', function () {
-                console.log("clicked")
+
                 var sound = new Audio("ding.mp3");
-                sound.play();
-                console.log(el.getAttribute('visible'));
-            })
+                if(console.log(el.getAttribute('visible')) == 'true'){
+                    var sound = new Audio("ding.mp3");
+                    sound.play();
+                    console.log(el.getAttribute('visible'));
+
+                }
+                var sound = new Audio("ding.mp3");
+               
         }
     });
           </script>
