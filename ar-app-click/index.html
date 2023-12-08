@@ -18,9 +18,11 @@
                     if(el.getAttribute("sound_playing") == 'true'){
                         sound.pause();
                         console.log("I am clicked");
+                        el.setAttribute("sound_playing", "false");
                     }
                     if(el.getAttribute("sound_playing") == 'false'){
                         sound.play();
+                        el.setAttribute("sound_playing", "true");
                     }
                 });
                 }
