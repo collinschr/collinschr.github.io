@@ -10,19 +10,6 @@
 
             
         <script>
-            AFRAME.registerComponent('play-sound', {
-            init: function () {
-                var el = this.el
-
-                var sound = new Audio("ding.mp3");
-                if(el.getAttribute('visible')){
-                    //sound.play();
-                    console.log("Sound played");
-
-                }
-               
-        }
-    });
           </script>
     </head>
         <body style="margin: 0px; overflow: hidden;">
@@ -49,6 +36,20 @@
                     box.setAttribute('visible', 'false');
                     console.log(box.getAttribute('visible'))
                 });
+            </script>
+            <script>
+            AFRAME.registerComponent('play-sound', {
+                init: function () {
+                var el = this.el
+
+                var sound = new Audio("ding.mp3");
+                if(el.getAttribute('visible')){
+                    //sound.play();
+                    console.log("Sound played");
+
+                }
+            }
+        });
             </script>
         </body>
 </html>
