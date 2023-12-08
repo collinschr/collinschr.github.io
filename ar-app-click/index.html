@@ -14,7 +14,7 @@
         <body style="margin: 0px; overflow: hidden;">
             <a-scene embedded arjs id="scene">
                 <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" raycaster="objects: a-box" preset="hiro" id = "hiro-marker">
-                    <a-image id="box" geometry="primitive: plane" src="flyer.png" rotation="-90 0 0" width="2" height="1.5" position='0 0 0' visible = 'false' sound_playing = 'false' soundClick></a-image>
+                    <a-image id="box" geometry="primitive: plane" src="flyer.png" rotation="-90 0 0" width="2" height="1.5" position='0 0 0' visible = 'false' sound_playing = 'false' soundclick></a-image>
                 </a-marker>
                 <a-entity camera ></a-entity>
             </a-scene>
@@ -39,7 +39,7 @@
                 });
             </script>
             <script>
-                AFRAME.registerComponent('soundClick', {
+                AFRAME.registerComponent('soundclick', {
                     init: function () {
                     var el = this.el;
 
