@@ -6,7 +6,6 @@
         <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
 
         <script src="components.js"></script>
-        <script src="/cursor.js" defer></script>
         
     
         <script> var sound = new Audio("seeram.mp3"); </script>
@@ -40,12 +39,12 @@
                 });
             </script>
             <script>
-                AFRAME.registerComponent('soundclick', {
+                AFRAME.registerComponent('soundClick', {
                     init: function () {
                     var el = this.el;
 
                     el.addEventListener('click', (e) => {
-                        if(el.getAttribute('sound_playing')){
+                        if(el.getAttribute('sound_playing') == 'true'){
                             sound.pause();
                             console.log("I am clicked");
                         }
