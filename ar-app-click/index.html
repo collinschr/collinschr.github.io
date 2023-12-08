@@ -19,6 +19,9 @@
                         sound.pause();
                         console.log("I am clicked");
                     }
+                    if(el.getAttribute("sound_playing") == 'false'){
+                        sound.play();
+                    }
                 });
                 }
             });
