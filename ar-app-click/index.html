@@ -9,30 +9,10 @@
         
     
         <script> var sound = new Audio("seeram.mp3"); </script>
-        <script>
-            AFRAME.registerComponent('soundclick', {
-                init: function () {
-                var el = this.el;
-
-                el.addEventListener('click', (e) => {
-                    if(el.getAttribute("sound_playing") == 'true'){
-                        sound.play();
-                        console.log("I am clicked");
-                       // el.setAttribute("sound_playing", "false");
-                        el.setAttribute('clicked', 'true');
-                    }
-                    else{
-                     //   sound.play();
-                        el.setAttribute("sound_playing", "true");
-                    }
-                });
-                }
-            });
-        </script>
 
     </head>
         <body style="margin: 0px; overflow: hidden;">
-            <a-scene arjs id="scene">
+            <a-scene embedded arjs id="scene">
                 <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" type="pattern" id = "hiro-marker" raycaster="objects: .clickable" url="pattern-Marker.patt">
                     <a-image id="box" geometry="primitive: plane" src="flyer.png" rotation="-90 0 0" width="2" height="1.5" position='0 0 0' visible = 'false' sound_playing = 'True' class = 'clickable' clicked = 'false' soundclick></a-image>
                 </a-marker>
@@ -52,6 +32,25 @@
                     }
 
                 });
+
+                AFRAME.registerComponent('soundclick', {
+                init: function () {
+                var el = this.el;
+
+                el.addEventListener('click', (e) => {
+                    if(el.getAttribute("sound_playing") == 'true'){
+                        sound.play();
+                        console.log("I am clicked");
+                       // el.setAttribute("sound_playing", "false");
+                        el.setAttribute('clicked', 'true');
+                    }
+                    else{
+                     //   sound.play();
+                        el.setAttribute("sound_playing", "true");
+                    }
+                });
+                }
+            });
             </script>
             <script>
                 document.querySelector('a-marker').addEventListener('markerLost', function () {
