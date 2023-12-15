@@ -39,13 +39,13 @@
 
                 el.addEventListener('click', (e) => {
                     if(el.getAttribute("sound_playing") == 'true'){
-                        sound.play();
+                        sound.pause();
                         console.log("I am clicked");
-                       // el.setAttribute("sound_playing", "false");
+                        el.setAttribute("sound_playing", "false");
                         el.setAttribute('clicked', 'true');
                     }
                     else{
-                     //   sound.play();
+                        sound.play();
                         el.setAttribute("sound_playing", "true");
                     }
                 });
