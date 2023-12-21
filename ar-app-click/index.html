@@ -6,9 +6,7 @@
         <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
 
         <script src="components.js"></script>
-        
     
-        <script> var sound = new Audio("seeram.mp3"); </script>
     </head>
         <body style="margin: 0px; overflow: hidden;">
             <a-scene embedded arjs id="scene">
@@ -18,9 +16,12 @@
                 <a-entity camera ></a-entity>
             </a-scene>
             <script>
-                document.querySelector('a-marker').addEventListener('touchstart', function () {
+                var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+                document.querySelector('a-marker').addEventListener(isMobile ? 'touchend' : 'click', function () {
+                    var sound = new Audio("seeram.mp3"); // Load the sound dynamically
                     sound.play();
-                    console.log("Sound played on touch");
+                    console.log("Sound played on touch/click");
                 });
 
                 document.querySelector('a-marker').addEventListener('markerLost', function () {
