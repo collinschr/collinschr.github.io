@@ -15,9 +15,7 @@
                 var el = this.el;
 
                 el.addEventListener('click', (e) => {
-                    if(el.getAttribute("sound_playing") == 'false'){
-                        sound.play();
-                    }
+                    sound.play();
                 });
                 }
             });
@@ -31,28 +29,5 @@
                 </a-marker>
                 <a-entity camera ></a-entity>
             </a-scene>
-            <script>
-                document.querySelector('a-marker').addEventListener('markerFound', function () {
-                    var displayObject = document.querySelector('#displayObject');
-                
-                    // Set the displayObject to be visible when marker is found
-                    displayObject.setAttribute('visible', 'true');
-                    if(displayObject.getAttribute('sound_playing') == 'true' && displayObject.getAttribute('clicked') == 'true'){
-                        sound.pause();
-                        displayObject.setAttribute('sound_playing', 'false');
-                        console.log(displayObject.getAttribute('visible'));
-                    }
-
-                });
-            </script>
-            <script>
-                document.querySelector('a-marker').addEventListener('markerLost', function () {
-                    var displayObject = document.querySelector('#displayObject');
-                
-                    // Set the displayObject to be visible when marker is found
-                    displayObject.setAttribute('visible', 'false');
-                    console.log(displayObject.getAttribute('visible'));
-                });
-            </script>
         </body>
 </html>
