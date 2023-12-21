@@ -9,13 +9,13 @@
         
     
         <script> var sound = new Audio("seeram.mp3"); </script>
+        
         <script>
             AFRAME.registerComponent('soundclick', {
                 init: function () {
                 var el = this.el;
 
                 el.addEventListener('click', (e) => {
-                   
                         sound.play();
                         console.log("I am clicked");
                   
