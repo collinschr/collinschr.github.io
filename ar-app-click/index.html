@@ -19,7 +19,7 @@
                 var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
                 document.querySelector('a-marker').addEventListener(isMobile ? 'touchend' : 'click', function () {
-                    var sound = new Audio("seeram.mp3"); // Load the sound dynamically
+                    var sound = new Audio("ding.mp3"); // Load the sound dynamically
                     sound.play();
                     console.log("Sound played on touch/click");
                 });
