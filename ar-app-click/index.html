@@ -9,26 +9,6 @@
         
     
         <script> var sound = new Audio("seeram.mp3"); </script>
-
-        <script>
-            AFRAME.registerComponent('soundclick', {
-                init: function () {
-                    var el = this.el;
-
-                    // Listen for both click and touchstart events
-                    el.addEventListener('click', handleClick);
-                    el.addEventListener('touchstart', handleClick);
-
-                    function handleClick(e) {
-                        sound.play();
-                        console.log("I am clicked");
-                        console.log('yes');
-
-                    }
-                }
-            });
-        </script>
-
     </head>
         <body style="margin: 0px; overflow: hidden;">
             <a-scene embedded arjs id="scene">
@@ -38,6 +18,11 @@
                 <a-entity camera ></a-entity>
             </a-scene>
             <script>
+                document.querySelector('a-marker').addEventListener('touchstart', function () {
+                    sound.play();
+                    console.log("Sound played on touch");
+                });
+
                 document.querySelector('a-marker').addEventListener('markerLost', function () {
                     var box = document.querySelector('#box');
                 
