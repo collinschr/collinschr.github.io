@@ -39,6 +39,20 @@
                 <a-entity camera ></a-entity>
             </a-scene>
             <script>
+                document.querySelector('a-marker').addEventListener('markerFound', function () {
+                    var box = document.querySelector('#box');
+                
+                    // Set the box to be visible when marker is found
+                    box.setAttribute('visible', 'true');
+                    if(box.getAttribute('sound_playing') == 'false' && box.getAttribute('clicked') == 'false'){
+                        sound.play();
+                        box.setAttribute('sound_playing', 'true');
+                        console.log(box.getAttribute('visible'));
+                    }
+
+                });
+            </script>
+            <script>
                 document.querySelector('a-marker').addEventListener('markerLost', function () {
                     var box = document.querySelector('#box');
                 
