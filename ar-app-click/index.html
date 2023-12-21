@@ -29,5 +29,14 @@
                 </a-marker>
                 <a-entity camera ></a-entity>
             </a-scene>
+            <script>
+                document.querySelector('a-marker').addEventListener('markerLost', function () {
+                    var displayObject = document.querySelector('#displayObject');
+                
+                    // Set the displayObject to be visible when marker is found
+                    displayObject.setAttribute('visible', 'false');
+                    console.log(displayObject.getAttribute('visible'));
+                });
+            </script>
         </body>
 </html>
