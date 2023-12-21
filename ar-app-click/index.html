@@ -13,13 +13,18 @@
         <script>
             AFRAME.registerComponent('soundclick', {
                 init: function () {
-                var el = this.el;
+                    var el = this.el;
 
-                el.addEventListener('click', (e) => {
+                    // Listen for both click and touchstart events
+                    el.addEventListener('click', handleClick);
+                    el.addEventListener('touchstart', handleClick);
+
+                    function handleClick(e) {
                         sound.play();
                         console.log("I am clicked");
-                  
-                });
+                        console.log('yes');
+
+                    }
                 }
             });
         </script>
