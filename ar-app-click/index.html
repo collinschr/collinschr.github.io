@@ -9,7 +9,7 @@
         
     
         <script> var sound = new Audio("seeram.mp3"); </script>
-        
+
         <script>
             AFRAME.registerComponent('soundclick', {
                 init: function () {
@@ -28,7 +28,7 @@
         <body style="margin: 0px; overflow: hidden;">
             <a-scene embedded arjs id="scene">
                 <a-marker markerhandler emitevents="true" cursor="rayOrigin: mouse" type="pattern" id = "hiro-marker" raycaster="objects: .clickable" url="pattern-Marker.patt">
-                    <a-image id="box" geometry="primitive: plane" src="flyer.png" rotation="-90 0 0" width="2" height="1.5" position='0 0 0' visible = 'false' class = 'clickable' clicked = 'false' soundclick></a-image>
+                    <a-image id="box" geometry="primitive: plane" src="flyer.png" rotation="-90 0 0" width="2" height="1.5" position='0 0 0' class = 'clickable' clicked = 'false' soundclick></a-image>
                 </a-marker>
                 <a-entity camera ></a-entity>
             </a-scene>
@@ -37,7 +37,7 @@
                     var box = document.querySelector('#box');
                 
                     // Set the box to be visible when marker is found
-                    box.setAttribute('visible', 'false');
+                    box.setAttribute('visible', 'true');
                     console.log(box.getAttribute('visible'));
                 });
             </script>
